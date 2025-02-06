@@ -1,12 +1,22 @@
-age = int(input("Whats your age? "))
-name = input("Introduce yourself: ")
+import random # pseudo-random
 
-if age > 120:
-    print("Hi!")
-    print("You should be dead instead of using this program")
-    print("bye!")
+pintas = ['♣', '♦', '♥', '♠']
+valores = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
 
-elif age > 0 and age <= 50: # Cascadia Code
-    print("Your not so old. fancy")
-else:
-    print( f"Hi {name} {age} 🦄" ) #f-strings
+# Definicion de la funcion
+
+def generate_card():
+
+    new_card = {
+        "pinta": random.choice(pintas),
+        "valor": random.choice(valores)
+    }
+    
+    return new_card
+
+mano = []
+
+for _ in range(5):
+    mano.append(generate_card())
+
+print(mano)
